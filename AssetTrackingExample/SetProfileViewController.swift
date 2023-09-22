@@ -101,7 +101,7 @@ class SetProfileViewController: UIViewController, UIGestureRecognizerDelegate {
         
         let assetProfile: AssetProfile = AssetProfile.init(customId: customId, assetDescription: assetDescription, name: assetName, attributes: ["test": assetAttributes])
         
-        NBAssetTrackingApiFetcher.shared.createAsset(assetProfile: assetProfile) { assetCreationResponse in
+        AssetTracking.shared.createAsset(assetProfile: assetProfile) { assetCreationResponse in
             let assetId = assetCreationResponse.data.id
             self.editAssetId.text = assetId
             self.saveAssetProfile(assetId: assetId)
@@ -118,7 +118,7 @@ class SetProfileViewController: UIViewController, UIGestureRecognizerDelegate {
         
         let okAction = UIAlertAction(title: "Proceed", style: .default) { (_) in
             self.dismiss(animated: true, completion: nil)
-            NBAssetTrackingApiFetcher.shared.forceBindAsset(assetId: assetId) { responseCode in
+            AssetTracking.shared.forceBindAsset(assetId: assetId) { responseCode in
                 let toastView = ToastView(message: "Force bind new asset successfully with assetId: " + assetId)
                 toastView.show()
                 
@@ -151,7 +151,7 @@ class SetProfileViewController: UIViewController, UIGestureRecognizerDelegate {
             return
         }
         
-        NBAssetTrackingApiFetcher.shared.bindAsset(assetId: assetId) { responseCode in
+        AssetTracking.shared.bindAsset(assetId: assetId) { responseCode in
             let toastView = ToastView(message: "Bind asset successfully with id: " + assetId)
             toastView.show()
             

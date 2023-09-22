@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E36534D2AAAE71C00F51CC3 /* NBAssetDataCollectLib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36534B2AAAE71C00F51CC3 /* NBAssetDataCollectLib.xcframework */; };
-		5E36534E2AAAE71C00F51CC3 /* NBAssetDataCollectLib.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36534B2AAAE71C00F51CC3 /* NBAssetDataCollectLib.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5E36534F2AAAE71C00F51CC3 /* NBAssetTracking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36534C2AAAE71C00F51CC3 /* NBAssetTracking.xcframework */; };
-		5E3653502AAAE71C00F51CC3 /* NBAssetTracking.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36534C2AAAE71C00F51CC3 /* NBAssetTracking.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5E3653532AAAE81800F51CC3 /* ExampleOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3653522AAAE81800F51CC3 /* ExampleOverviewController.swift */; };
 		5E36535F2AAAE8BF00F51CC3 /* UpdateConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3653562AAAE8BF00F51CC3 /* UpdateConfigurationViewController.swift */; };
 		5E3653602AAAE8BF00F51CC3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3653572AAAE8BF00F51CC3 /* ViewModel.swift */; };
@@ -21,8 +17,12 @@
 		5E3653662AAAE8BF00F51CC3 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E36535D2AAAE8BF00F51CC3 /* ToastView.swift */; };
 		5E3653672AAAE8BF00F51CC3 /* GetAssetCallbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E36535E2AAAE8BF00F51CC3 /* GetAssetCallbackViewController.swift */; };
 		5E3653692AAAE9AC00F51CC3 /* ExtendedTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3653682AAAE9AC00F51CC3 /* ExtendedTrackingViewController.swift */; };
-		5E36536B2AAAEC5700F51CC3 /* MMKV.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36536A2AAAEC5600F51CC3 /* MMKV.xcframework */; };
-		5E36536C2AAAEC5700F51CC3 /* MMKV.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36536A2AAAEC5600F51CC3 /* MMKV.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5E7AA1512AAED38F00E5B591 /* MMKV.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36536A2AAAEC5600F51CC3 /* MMKV.xcframework */; };
+		5E7AA1522AAED38F00E5B591 /* MMKV.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36536A2AAAEC5600F51CC3 /* MMKV.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5E7AA1542AAED39100E5B591 /* NBAssetDataCollectLib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36534B2AAAE71C00F51CC3 /* NBAssetDataCollectLib.xcframework */; };
+		5E7AA1552AAED39100E5B591 /* NBAssetDataCollectLib.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36534B2AAAE71C00F51CC3 /* NBAssetDataCollectLib.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5E7AA1562AAED39300E5B591 /* NBAssetTracking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36534C2AAAE71C00F51CC3 /* NBAssetTracking.xcframework */; };
+		5E7AA1572AAED39300E5B591 /* NBAssetTracking.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36534C2AAAE71C00F51CC3 /* NBAssetTracking.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EA70B902AA8569400760364 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA70B8F2AA8569400760364 /* AppDelegate.swift */; };
 		5EA70B922AA8569400760364 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA70B912AA8569400760364 /* SceneDelegate.swift */; };
 		5EA70B972AA8569400760364 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA70B952AA8569400760364 /* Main.storyboard */; };
@@ -51,15 +51,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5E3653512AAAE71C00F51CC3 /* Embed Frameworks */ = {
+		5E7AA1532AAED38F00E5B591 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5E36534E2AAAE71C00F51CC3 /* NBAssetDataCollectLib.xcframework in Embed Frameworks */,
-				5E3653502AAAE71C00F51CC3 /* NBAssetTracking.xcframework in Embed Frameworks */,
-				5E36536C2AAAEC5700F51CC3 /* MMKV.xcframework in Embed Frameworks */,
+				5E7AA1522AAED38F00E5B591 /* MMKV.xcframework in Embed Frameworks */,
+				5E7AA1552AAED39100E5B591 /* NBAssetDataCollectLib.xcframework in Embed Frameworks */,
+				5E7AA1572AAED39300E5B591 /* NBAssetTracking.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,9 +99,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E36534D2AAAE71C00F51CC3 /* NBAssetDataCollectLib.xcframework in Frameworks */,
-				5E36534F2AAAE71C00F51CC3 /* NBAssetTracking.xcframework in Frameworks */,
-				5E36536B2AAAEC5700F51CC3 /* MMKV.xcframework in Frameworks */,
+				5E7AA1542AAED39100E5B591 /* NBAssetDataCollectLib.xcframework in Frameworks */,
+				5E7AA1512AAED38F00E5B591 /* MMKV.xcframework in Frameworks */,
+				5E7AA1562AAED39300E5B591 /* NBAssetTracking.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +203,7 @@
 				5EA70B882AA8569400760364 /* Sources */,
 				5EA70B892AA8569400760364 /* Frameworks */,
 				5EA70B8A2AA8569400760364 /* Resources */,
-				5E3653512AAAE71C00F51CC3 /* Embed Frameworks */,
+				5E7AA1532AAED38F00E5B591 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

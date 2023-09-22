@@ -51,7 +51,7 @@ class SimpleTrackingViewController: UIViewController {
         let attributes = ["attribute 1": "test 1", "attribute 2": "test 2"]
         let assetProfile: AssetProfile = AssetProfile.init(customId: UUID().uuidString.lowercased(), assetDescription: "testDescription", name: "testName", attributes: attributes)
         
-        NBAssetTrackingApiFetcher.shared.createAsset(assetProfile: assetProfile) { assetCreationResponse in
+        AssetTracking.shared.createAsset(assetProfile: assetProfile) { assetCreationResponse in
             let assetId = assetCreationResponse.data.id
             
             let toastView = ToastView(message: "Create asset successfully with id: " + assetId)
@@ -67,7 +67,7 @@ class SimpleTrackingViewController: UIViewController {
     }
     
     @objc func bindAssetAndStartTracking() {
-        NBAssetTrackingApiFetcher.shared.bindAsset(assetId: mAssetId) { responseCode in
+        AssetTracking.shared.bindAsset(assetId: mAssetId) { responseCode in
             let toastView = ToastView(message: "Bind asset successfully with id: " + self.mAssetId)
             toastView.show()
             AssetTracking.shared.startTracking()

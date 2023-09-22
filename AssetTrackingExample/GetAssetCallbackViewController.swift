@@ -17,6 +17,9 @@ class GetAssetCallbackViewController: UIViewController, AssetTrackingCallback {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Add this to confirm the protocol and receive callbacks
+        AssetTracking.shared.delegate = self
+        
         let dataTrackingConfig = DataTrackingConfig(baseUrl: Constants.DEFAULT_BASE_URL, dataStorageSize: 5000, dataUploadingBatchSize: 30, dataUploadingBatchWindow: 20, shouldClearLocalDataWhenCollision: true)
         AssetTracking.shared.setDataTrackingConfig(config: dataTrackingConfig)
         AssetTracking.shared.initialize(apiKey: Constants.DEFAULT_API_KEY)
@@ -51,7 +54,7 @@ class GetAssetCallbackViewController: UIViewController, AssetTrackingCallback {
         let attributes = ["attribute 1": "test 1", "attribute 2": "test 2"]
         let assetProfile: AssetProfile = AssetProfile.init(customId: UUID().uuidString.lowercased(), assetDescription: "testDescription", name: "testName", attributes: attributes)
         
-        NBAssetTrackingApiFetcher.shared.createAsset(assetProfile: assetProfile) { assetCreationResponse in
+        AssetTracking.shared.createAsset(assetProfile: assetProfile) { assetCreationResponse in
             let assetId = assetCreationResponse.data.id
             
             let toastView = ToastView(message: "Create asset successfully with id: " + assetId)
@@ -66,7 +69,7 @@ class GetAssetCallbackViewController: UIViewController, AssetTrackingCallback {
     }
     
     func bindAsset(assetId: String) {
-        NBAssetTrackingApiFetcher.shared.bindAsset(assetId: assetId) { responseCode in
+        AssetTracking.shared.bindAsset(assetId: assetId) { responseCode in
             let toastView = ToastView(message: "Bind asset successfully with id: " + assetId)
             toastView.show()
         } errorHandler: { error in
@@ -78,8 +81,6 @@ class GetAssetCallbackViewController: UIViewController, AssetTrackingCallback {
     
     @objc func startTracking() {
         AssetTracking.shared.startTracking()
-        // Add this to confirm the protocol and receive callbacks
-        AssetTracking.shared.delegate = self
     }
     
     @objc func stopTracking() {
