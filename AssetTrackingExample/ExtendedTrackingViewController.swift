@@ -22,6 +22,8 @@ class ExtendedTrackingViewController: UIViewController, AssetTrackingCallback {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Add this to confirm the protocol and receive callbacks
+        assetTracking.delegate = self
         
         let dataTrackingConfig = DataTrackingConfig(baseUrl: Constants.DEFAULT_BASE_URL, dataStorageSize: 5000, dataUploadingBatchSize: 30, dataUploadingBatchWindow: 20, shouldClearLocalDataWhenCollision: true)
         AssetTracking.shared.setDataTrackingConfig(config: dataTrackingConfig)
@@ -50,7 +52,7 @@ class ExtendedTrackingViewController: UIViewController, AssetTrackingCallback {
         let assetId = UserDefaults.standard.string(forKey: Constants.LAST_BIND_ASSET_ID_KEY) ?? ""
         
         if(!assetId.isEmpty) {
-            NBAssetTrackingApiFetcher.shared.bindAsset(assetId: assetId) { responseCode in
+            AssetTracking.shared.bindAsset(assetId: assetId) { responseCode in
                 let toastView = ToastView(message: "Bind asset successfully with id: " + assetId)
                 toastView.show()
             } errorHandler: { error in
@@ -90,7 +92,6 @@ class ExtendedTrackingViewController: UIViewController, AssetTrackingCallback {
             return
         }
         
-        assetTracking.delegate = self
         assetTracking.startTracking()
     }
     

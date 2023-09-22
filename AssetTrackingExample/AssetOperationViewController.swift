@@ -50,7 +50,7 @@ class AssetOperationViewController: UIViewController {
     @objc func createAsset(){
         let assetProfile: AssetProfile = AssetProfile.init(customId: UUID().uuidString.lowercased(), assetDescription: assetDescription, name: assetName, attributes: assetAttributes)
         
-        NBAssetTrackingApiFetcher.shared.createAsset(assetProfile: assetProfile) { assetCreationResponse in
+        AssetTracking.shared.createAsset(assetProfile: assetProfile) { assetCreationResponse in
             let assetId = assetCreationResponse.data.id
             self.assetId = assetId
             
@@ -75,7 +75,7 @@ class AssetOperationViewController: UIViewController {
     }
     
     @objc func bindAsset(){
-        NBAssetTrackingApiFetcher.shared.bindAsset(assetId: self.assetId) { responseCode in
+        AssetTracking.shared.bindAsset(assetId: self.assetId) { responseCode in
             let toastView = ToastView(message: "Bind asset successfully with id: " + self.assetId)
             toastView.show()
         } errorHandler: { error in
@@ -91,7 +91,7 @@ class AssetOperationViewController: UIViewController {
         
         let assetProfile: AssetProfile = AssetProfile.init(customId: assetId, assetDescription: assetDescription, name: assetName, attributes: assetAttributes)
         
-        NBAssetTrackingApiFetcher.shared.updateAsset(assetProfile: assetProfile) {responseCode in
+        AssetTracking.shared.updateAsset(assetProfile: assetProfile) {responseCode in
             let toastView = ToastView(message: "update asset profile successfully with id: " + self.assetId)
             toastView.show()
             
@@ -114,7 +114,7 @@ class AssetOperationViewController: UIViewController {
     }
     
     @objc func getAssetInfo(){
-        NBAssetTrackingApiFetcher.shared.getAssetDetail(){getAssetResponse in
+        AssetTracking.shared.getAssetDetail(){getAssetResponse in
             let data: GetAssetResponseData = getAssetResponse.data
             do {
                 let encoder = JSONEncoder()
