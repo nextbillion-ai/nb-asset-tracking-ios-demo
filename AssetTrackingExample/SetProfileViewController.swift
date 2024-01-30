@@ -106,7 +106,7 @@ class SetProfileViewController: UIViewController, UIGestureRecognizerDelegate {
             self.editAssetId.text = assetId
             self.saveAssetProfile(assetId: assetId)
         } errorHandler: { error in
-            let errorMessage = error.localizedDescription
+            let errorMessage = error.message
             let toastView = ToastView(message: "Create asset failed: " + errorMessage)
             toastView.show()
         }
@@ -127,7 +127,7 @@ class SetProfileViewController: UIViewController, UIGestureRecognizerDelegate {
                 
                 self.navigationController?.popViewController(animated: true)
             } errorHandler: { error in
-                let errorMessage = error.localizedDescription
+                let errorMessage = error.message
                 let toastView = ToastView(message: "Bind asset failed: " + errorMessage)
                 toastView.show()
             }
@@ -161,9 +161,9 @@ class SetProfileViewController: UIViewController, UIGestureRecognizerDelegate {
             self.navigationController?.popViewController(animated: true)
             
         } errorHandler: { error in
-            let errorMessage = error.localizedDescription
+            let errorMessage = error.message
             
-            if (errorMessage.contains(AssetTrackingApiExceptionType.UN_UPLOADED_LOCATION_DATA.rawValue)) {
+            if (error is UnreportedDataError) {
                 self.showForceBindDialog(assetId: assetId, warningMessage: errorMessage)
             } else {
                 let toastView = ToastView(message: "Bind asset failed: " + errorMessage)

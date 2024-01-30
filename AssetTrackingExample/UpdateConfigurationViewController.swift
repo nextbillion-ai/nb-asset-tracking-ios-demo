@@ -7,6 +7,7 @@
 import Foundation
 import UIKit
 import NBAssetTracking
+import CoreLocation
 
 class UpdateConfigurationViewController: UIViewController {
     @IBOutlet weak var updateLocationConfigBtn: UIButton!
@@ -19,7 +20,6 @@ class UpdateConfigurationViewController: UIViewController {
         let assetTracking = AssetTracking.shared
         
         let locationConfig = LocationConfig(trackingMode: .ACTIVE)
-        locationConfig.distanceFilter = 5
         assetTracking.setLocationConfig(config: locationConfig)
         
         let notificationConfig = NotificationConfig()
@@ -55,9 +55,9 @@ class UpdateConfigurationViewController: UIViewController {
     
     @objc  func updateLocationConfig(){
         let locationConfig = AssetTracking.shared.getLocationConfig()
-        locationConfig.distanceFilter = 10
+        let updatedLocationConfig = LocationConfig(distanceFilter: 100, desiredAccuracy: kCLLocationAccuracyBest, enableStationaryCheck: locationConfig.enableStationaryCheck)
         
-        AssetTracking.shared.updateLocationConfig(config: locationConfig)
+        AssetTracking.shared.updateLocationConfig(config: updatedLocationConfig)
         
         let newLocationConfig = AssetTracking.shared.getLocationConfig()
         
@@ -99,7 +99,7 @@ class UpdateConfigurationViewController: UIViewController {
             
             self.bindAssetAndStartTracking(assetId: assetId)
         } errorHandler: { error in
-            let errorMessage = error.localizedDescription
+            let errorMessage = error.message
             let toastView = ToastView(message: "Create asset failed: " + errorMessage)
             toastView.show()
         }
@@ -111,7 +111,7 @@ class UpdateConfigurationViewController: UIViewController {
             toastView.show()
             AssetTracking.shared.startTracking()
         } errorHandler: { error in
-            let errorMessage = error.localizedDescription
+            let errorMessage = error.message
             let toastView = ToastView(message: "Bind asset failed: " + errorMessage)
             toastView.show()
         }

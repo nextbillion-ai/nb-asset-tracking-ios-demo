@@ -28,6 +28,11 @@ class ExtendedTrackingViewController: UIViewController, AssetTrackingCallback {
         let dataTrackingConfig = DataTrackingConfig(baseUrl: Constants.DEFAULT_BASE_URL, dataStorageSize: 5000, dataUploadingBatchSize: 30, dataUploadingBatchWindow: 20, shouldClearLocalDataWhenCollision: true)
         AssetTracking.shared.setDataTrackingConfig(config: dataTrackingConfig)
         AssetTracking.shared.initialize(apiKey: Constants.DEFAULT_API_KEY)
+        if #available(iOS 15.0, *) {
+            assetTracking.setAllowFakeGps(allow: true)
+        } else {
+            // Fallback on earlier versions
+        }
         
         startTracking.setTitle("Start Tracking", for: .normal)
         startTracking.setTitleColor(.white, for: .normal)
@@ -56,7 +61,7 @@ class ExtendedTrackingViewController: UIViewController, AssetTrackingCallback {
                 let toastView = ToastView(message: "Bind asset successfully with id: " + assetId)
                 toastView.show()
             } errorHandler: { error in
-                let errorMessage = error.localizedDescription
+                let errorMessage = error.message
                 let toastView = ToastView(message: "Bind asset failed: " + errorMessage)
                 toastView.show()
             }
