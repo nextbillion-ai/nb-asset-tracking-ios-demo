@@ -68,7 +68,7 @@ class AssetOperationViewController: UIViewController {
             }
             
         } errorHandler: { error in
-            let errorMessage = error.localizedDescription
+            let errorMessage = error.message
             let toastView = ToastView(message: "Create asset failed: " + errorMessage)
             toastView.show()
         }
@@ -79,7 +79,7 @@ class AssetOperationViewController: UIViewController {
             let toastView = ToastView(message: "Bind asset successfully with id: " + self.assetId)
             toastView.show()
         } errorHandler: { error in
-            let errorMessage = error.localizedDescription
+            let errorMessage = error.message
             let toastView = ToastView(message: "Bind asset failed: " + errorMessage)
             toastView.show()
         }
@@ -126,7 +126,7 @@ class AssetOperationViewController: UIViewController {
                 print("Error encoding JSON: \(error)")
             }
         } errorHandler: { error in
-            let errorMessage = error.localizedDescription
+            let errorMessage = error.message
             let toastView = ToastView(message: "Get asset profile failed: " + errorMessage)
             toastView.show()
         }

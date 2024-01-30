@@ -20,7 +20,11 @@ class SimpleTrackingViewController: UIViewController {
         let dataTrackingConfig = DataTrackingConfig(baseUrl: Constants.DEFAULT_BASE_URL, dataStorageSize: 5000, dataUploadingBatchSize: 30, dataUploadingBatchWindow: 20, shouldClearLocalDataWhenCollision: true)
         AssetTracking.shared.setDataTrackingConfig(config: dataTrackingConfig)
         AssetTracking.shared.initialize(apiKey: Constants.DEFAULT_API_KEY)
-        
+        if #available(iOS 15.0, *) {
+            AssetTracking.shared.setAllowFakeGps(allow: true)
+        } else {
+            // Fallback on earlier versions
+        }
         initView()
         
         createAsset()
@@ -60,7 +64,7 @@ class SimpleTrackingViewController: UIViewController {
             self.mAssetId = assetId
             self.assetId.text = "asset id is: " + assetId
         } errorHandler: { error in
-            let errorMessage = error.localizedDescription
+            let errorMessage = error.message
             let toastView = ToastView(message: "Create asset failed: " + errorMessage)
             toastView.show()
         }
@@ -73,7 +77,7 @@ class SimpleTrackingViewController: UIViewController {
             AssetTracking.shared.startTracking()
             self.trackingStatus.text = "Asset Tracking is running"
         } errorHandler: { error in
-            let errorMessage = error.localizedDescription
+            let errorMessage = error.message
             let toastView = ToastView(message: "Bind asset failed: " + errorMessage)
             toastView.show()
         }
