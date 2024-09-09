@@ -11,11 +11,12 @@ class ExampleOverviewController: UITableViewController {
     
     let examples: [String: [ViewModel]] = [
         "Asset Tracking Examples":[
-            ViewModel(name: "Simple Tracking", viewController: SimpleTrackingViewController.self, storyboardIdentifier: "SimpleTrackingViewController"),
+            ViewModel(name: "Extended Tracking Example", viewController: ExtendedTrackingViewController.self, storyboardIdentifier: "ExtendedTrackingViewController"),
             ViewModel(name: "Asset Related Operations", viewController: AssetOperationViewController.self, storyboardIdentifier: "AssetOperationViewController"),
             ViewModel(name: "Get Asset Tracking Callback", viewController: GetAssetCallbackViewController.self, storyboardIdentifier: "GetAssetCallbackViewController"),
             ViewModel(name: "Update Configurations", viewController: UpdateConfigurationViewController.self, storyboardIdentifier: "UpdateConfigurationViewController"),
-            ViewModel(name: "Extended Tracking Example", viewController: ExtendedTrackingViewController.self, storyboardIdentifier: "ExtendedTrackingViewController"),
+            ViewModel(name: "Simple Tracking", viewController: SimpleTrackingViewController.self, storyboardIdentifier: "SimpleTrackingViewController"),
+           
         ]
     ]
     

@@ -9,7 +9,9 @@ import UIKit
 import NBAssetTracking
 import CoreLocation
 
-class GetAssetCallbackViewController: UIViewController, AssetTrackingCallback {
+class GetAssetCallbackViewController: UIViewController, AssetTrackingDelegate {
+
+    
     @IBOutlet weak var startTrackingBtn: UIButton!
     @IBOutlet weak var stopTrackingBtn: UIButton!
     @IBOutlet weak var trackingStatus: UILabel!
@@ -52,11 +54,9 @@ class GetAssetCallbackViewController: UIViewController, AssetTrackingCallback {
     
     func createAndBindAsset(){
         let attributes = ["attribute 1": "test 1", "attribute 2": "test 2"]
-        let assetProfile: AssetProfile = AssetProfile.init(customId: UUID().uuidString.lowercased(), assetDescription: "testDescription", name: "testName", attributes: attributes)
+        let assetProfile: AssetProfile = AssetProfile.init(name: "testName", customId: UUID().uuidString.lowercased(), description: "testDescription", attributes: attributes)
         
-        AssetTracking.shared.createAsset(assetProfile: assetProfile) { assetCreationResponse in
-            let assetId = assetCreationResponse.data.id
-            
+        AssetTracking.shared.createAsset(assetProfile: assetProfile) { assetId in
             let toastView = ToastView(message: "Create asset successfully with id: " + assetId)
             toastView.show()
             
@@ -129,5 +129,9 @@ class GetAssetCallbackViewController: UIViewController, AssetTrackingCallback {
         if !assetTrackingRunning {
             locationInfo.text = ""
         }
+    }
+    
+    func onTripStatusChanged(tripId: String, status: NBAssetTracking.TripStatus) {
+        
     }
 }
