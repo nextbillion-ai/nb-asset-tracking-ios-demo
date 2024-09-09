@@ -53,11 +53,9 @@ class SimpleTrackingViewController: UIViewController {
     
     func createAsset(){
         let attributes = ["attribute 1": "test 1", "attribute 2": "test 2"]
-        let assetProfile: AssetProfile = AssetProfile.init(customId: UUID().uuidString.lowercased(), assetDescription: "testDescription", name: "testName", attributes: attributes)
+        let assetProfile: AssetProfile = AssetProfile.init(name: "testName", customId: UUID().uuidString.lowercased(), description: "testDescription", attributes: attributes)
         
-        AssetTracking.shared.createAsset(assetProfile: assetProfile) { assetCreationResponse in
-            let assetId = assetCreationResponse.data.id
-            
+        AssetTracking.shared.createAsset(assetProfile: assetProfile) { assetId in
             let toastView = ToastView(message: "Create asset successfully with id: " + assetId)
             toastView.show()
             

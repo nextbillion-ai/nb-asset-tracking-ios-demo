@@ -48,10 +48,9 @@ class AssetOperationViewController: UIViewController {
     }
     
     @objc func createAsset(){
-        let assetProfile: AssetProfile = AssetProfile.init(customId: UUID().uuidString.lowercased(), assetDescription: assetDescription, name: assetName, attributes: assetAttributes)
+        let assetProfile: AssetProfile = AssetProfile.init(name: assetName, customId: UUID().uuidString.lowercased(), description: assetDescription,  attributes: assetAttributes)
         
-        AssetTracking.shared.createAsset(assetProfile: assetProfile) { assetCreationResponse in
-            let assetId = assetCreationResponse.data.id
+        AssetTracking.shared.createAsset(assetProfile: assetProfile) { assetId in
             self.assetId = assetId
             
             let toastView = ToastView(message: "Create asset successfully with id: " + self.assetId)
@@ -89,7 +88,7 @@ class AssetOperationViewController: UIViewController {
         assetName = "newName"
         assetDescription = "newDescription"
         
-        let assetProfile: AssetProfile = AssetProfile.init(customId: assetId, assetDescription: assetDescription, name: assetName, attributes: assetAttributes)
+        let assetProfile: UpdateAssetProfile = UpdateAssetProfile.init(name: assetName, description: assetDescription, attributes: assetAttributes)
         
         AssetTracking.shared.updateAsset(assetProfile: assetProfile) {responseCode in
             let toastView = ToastView(message: "update asset profile successfully with id: " + self.assetId)
@@ -113,9 +112,9 @@ class AssetOperationViewController: UIViewController {
         }
     }
     
-    @objc func getAssetInfo(){
-        AssetTracking.shared.getAssetDetail(){getAssetResponse in
-            let data: GetAssetResponseData = getAssetResponse.data
+    @objc func getAssetInfo() {
+        AssetTracking.shared.getAssetDetail(completionHandler: { asset in
+            let data = asset
             do {
                 let encoder = JSONEncoder()
                 let jsonData = try encoder.encode(data)
@@ -125,11 +124,11 @@ class AssetOperationViewController: UIViewController {
             } catch {
                 print("Error encoding JSON: \(error)")
             }
-        } errorHandler: { error in
+        }, errorHandler: { error in
             let errorMessage = error.message
             let toastView = ToastView(message: "Get asset profile failed: " + errorMessage)
             toastView.show()
-        }
+        })
     }
     
     

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C81B2322C8EE4D1001F6117 /* MultiTrackingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81B2312C8EE4D1001F6117 /* MultiTrackingMode.swift */; };
+		0C81B2342C8EE6CE001F6117 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81B2332C8EE6CE001F6117 /* UIColor.swift */; };
+		0C81B2362C8EE6F0001F6117 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81B2352C8EE6F0001F6117 /* Dialog.swift */; };
+		0C81B2382C8EE724001F6117 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81B2372C8EE724001F6117 /* UIViewController.swift */; };
+		0C81B23A2C8EE799001F6117 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81B2392C8EE799001F6117 /* UIView.swift */; };
 		5E3653532AAAE81800F51CC3 /* ExampleOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3653522AAAE81800F51CC3 /* ExampleOverviewController.swift */; };
 		5E36535F2AAAE8BF00F51CC3 /* UpdateConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3653562AAAE8BF00F51CC3 /* UpdateConfigurationViewController.swift */; };
 		5E3653602AAAE8BF00F51CC3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3653572AAAE8BF00F51CC3 /* ViewModel.swift */; };
@@ -67,6 +72,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C81B2312C8EE4D1001F6117 /* MultiTrackingMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTrackingMode.swift; sourceTree = "<group>"; };
+		0C81B2332C8EE6CE001F6117 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		0C81B2352C8EE6F0001F6117 /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
+		0C81B2372C8EE724001F6117 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		0C81B2392C8EE799001F6117 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		0C81B23B2C8EF7AC001F6117 /* AssetTrackingExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AssetTrackingExample.entitlements; sourceTree = "<group>"; };
 		5E36534B2AAAE71C00F51CC3 /* NBAssetDataCollectLib.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NBAssetDataCollectLib.xcframework; path = Carthage/Build/NBAssetDataCollectLib.xcframework; sourceTree = "<group>"; };
 		5E36534C2AAAE71C00F51CC3 /* NBAssetTracking.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NBAssetTracking.xcframework; path = Carthage/Build/NBAssetTracking.xcframework; sourceTree = "<group>"; };
 		5E3653522AAAE81800F51CC3 /* ExampleOverviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleOverviewController.swift; sourceTree = "<group>"; };
@@ -156,6 +167,7 @@
 		5EA70B8E2AA8569400760364 /* AssetTrackingExample */ = {
 			isa = PBXGroup;
 			children = (
+				0C81B23B2C8EF7AC001F6117 /* AssetTrackingExample.entitlements */,
 				5EA70B8F2AA8569400760364 /* AppDelegate.swift */,
 				5EA70B912AA8569400760364 /* SceneDelegate.swift */,
 				5E36535C2AAAE8BF00F51CC3 /* AssetOperationViewController.swift */,
@@ -172,6 +184,11 @@
 				5EA70B9D2AA8569500760364 /* Info.plist */,
 				5E3653522AAAE81800F51CC3 /* ExampleOverviewController.swift */,
 				5E3653682AAAE9AC00F51CC3 /* ExtendedTrackingViewController.swift */,
+				0C81B2312C8EE4D1001F6117 /* MultiTrackingMode.swift */,
+				0C81B2332C8EE6CE001F6117 /* UIColor.swift */,
+				0C81B2352C8EE6F0001F6117 /* Dialog.swift */,
+				0C81B2372C8EE724001F6117 /* UIViewController.swift */,
+				0C81B2392C8EE799001F6117 /* UIView.swift */,
 			);
 			path = AssetTrackingExample;
 			sourceTree = "<group>";
@@ -326,16 +343,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E3653612AAAE8BF00F51CC3 /* SimpleTrackingViewController.swift in Sources */,
+				0C81B2342C8EE6CE001F6117 /* UIColor.swift in Sources */,
 				5E3653642AAAE8BF00F51CC3 /* SetProfileViewController.swift in Sources */,
 				5E3653532AAAE81800F51CC3 /* ExampleOverviewController.swift in Sources */,
 				5E3653662AAAE8BF00F51CC3 /* ToastView.swift in Sources */,
 				5E36535F2AAAE8BF00F51CC3 /* UpdateConfigurationViewController.swift in Sources */,
+				0C81B2362C8EE6F0001F6117 /* Dialog.swift in Sources */,
 				5EA70B902AA8569400760364 /* AppDelegate.swift in Sources */,
 				5E3653602AAAE8BF00F51CC3 /* ViewModel.swift in Sources */,
 				5EA70B922AA8569400760364 /* SceneDelegate.swift in Sources */,
 				5E3653692AAAE9AC00F51CC3 /* ExtendedTrackingViewController.swift in Sources */,
 				5E3653652AAAE8BF00F51CC3 /* AssetOperationViewController.swift in Sources */,
 				5E3653672AAAE8BF00F51CC3 /* GetAssetCallbackViewController.swift in Sources */,
+				0C81B23A2C8EE799001F6117 /* UIView.swift in Sources */,
+				0C81B2322C8EE4D1001F6117 /* MultiTrackingMode.swift in Sources */,
+				0C81B2382C8EE724001F6117 /* UIViewController.swift in Sources */,
 				5E3653622AAAE8BF00F51CC3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,6 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AssetTrackingExample/AssetTrackingExample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YZF69WHR3X;
@@ -542,6 +565,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AssetTrackingExample/AssetTrackingExample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YZF69WHR3X;

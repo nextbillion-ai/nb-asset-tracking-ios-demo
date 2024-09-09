@@ -99,10 +99,9 @@ class SetProfileViewController: UIViewController, UIGestureRecognizerDelegate {
             return
         }
         
-        let assetProfile: AssetProfile = AssetProfile.init(customId: customId, assetDescription: assetDescription, name: assetName, attributes: ["test": assetAttributes])
+        let assetProfile: AssetProfile = AssetProfile.init(name: assetName, customId: customId, description: assetDescription, attributes: ["test": assetAttributes])
         
-        AssetTracking.shared.createAsset(assetProfile: assetProfile) { assetCreationResponse in
-            let assetId = assetCreationResponse.data.id
+        AssetTracking.shared.createAsset(assetProfile: assetProfile) { assetId in
             self.editAssetId.text = assetId
             self.saveAssetProfile(assetId: assetId)
         } errorHandler: { error in
