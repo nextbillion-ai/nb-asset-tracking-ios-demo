@@ -22,9 +22,6 @@ class AssetOperationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let dataTrackingConfig = DataTrackingConfig(baseUrl: Constants.DEFAULT_BASE_URL, dataStorageSize: 5000, dataUploadingBatchSize: 30, dataUploadingBatchWindow: 20, shouldClearLocalDataWhenCollision: true)
-        AssetTracking.shared.setDataTrackingConfig(config: dataTrackingConfig)
-        AssetTracking.shared.initialize(apiKey: Constants.DEFAULT_API_KEY)
         
         initView()
     }

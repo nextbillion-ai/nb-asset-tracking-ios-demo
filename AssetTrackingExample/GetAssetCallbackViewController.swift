@@ -22,10 +22,6 @@ class GetAssetCallbackViewController: UIViewController, AssetTrackingDelegate {
         // Add this to confirm the protocol and receive callbacks
         AssetTracking.shared.delegate = self
         
-        let dataTrackingConfig = DataTrackingConfig(baseUrl: Constants.DEFAULT_BASE_URL, dataStorageSize: 5000, dataUploadingBatchSize: 30, dataUploadingBatchWindow: 20, shouldClearLocalDataWhenCollision: true)
-        AssetTracking.shared.setDataTrackingConfig(config: dataTrackingConfig)
-        AssetTracking.shared.initialize(apiKey: Constants.DEFAULT_API_KEY)
-        
         createAndBindAsset()
         initView()
     }
