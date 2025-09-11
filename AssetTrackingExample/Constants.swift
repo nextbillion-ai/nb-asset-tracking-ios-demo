@@ -8,6 +8,8 @@
 import Foundation
 
 class Constants {
+    static let DEFAULT_API_KEY = "Your-API-Key"
+    
     static let IS_NOT_FIRST_INSTALLATION_KEY = "IS_NOT_FIRST_INSTALLATION_KEY"
     
     static let CUSTOM_ID_KEY = "CUSTOM_ID_KEY"
@@ -17,7 +19,5 @@ class Constants {
     
     static let ASSET_ID_KEY = "ASSET_ID_KEY"
     static let LAST_BIND_ASSET_ID_KEY = "LAST_BIND_ASSET_ID_KEY"
-    
-    static let DEFAULT_API_KEY = "PUT YOUR API KEY HERE"
-    static let DEFAULT_BASE_URL = "api.nextbillion.io"
+
 }

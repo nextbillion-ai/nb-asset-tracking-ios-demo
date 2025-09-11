@@ -5,6 +5,7 @@
 
 
 import UIKit
+import NBAssetTracking
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        AssetTracking.shared.initialize(apiKey: Constants.DEFAULT_API_KEY)
         return true
     }
 
