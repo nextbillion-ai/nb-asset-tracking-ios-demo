@@ -22,8 +22,6 @@
 		5E3653662AAAE8BF00F51CC3 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E36535D2AAAE8BF00F51CC3 /* ToastView.swift */; };
 		5E3653672AAAE8BF00F51CC3 /* GetAssetCallbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E36535E2AAAE8BF00F51CC3 /* GetAssetCallbackViewController.swift */; };
 		5E3653692AAAE9AC00F51CC3 /* ExtendedTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3653682AAAE9AC00F51CC3 /* ExtendedTrackingViewController.swift */; };
-		5E7AA1512AAED38F00E5B591 /* MMKV.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36536A2AAAEC5600F51CC3 /* MMKV.xcframework */; };
-		5E7AA1522AAED38F00E5B591 /* MMKV.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36536A2AAAEC5600F51CC3 /* MMKV.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5E7AA1542AAED39100E5B591 /* NBAssetDataCollectLib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36534B2AAAE71C00F51CC3 /* NBAssetDataCollectLib.xcframework */; };
 		5E7AA1552AAED39100E5B591 /* NBAssetDataCollectLib.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36534B2AAAE71C00F51CC3 /* NBAssetDataCollectLib.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5E7AA1562AAED39300E5B591 /* NBAssetTracking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E36534C2AAAE71C00F51CC3 /* NBAssetTracking.xcframework */; };
@@ -62,7 +60,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5E7AA1522AAED38F00E5B591 /* MMKV.xcframework in Embed Frameworks */,
 				5E7AA1552AAED39100E5B591 /* NBAssetDataCollectLib.xcframework in Embed Frameworks */,
 				5E7AA1572AAED39300E5B591 /* NBAssetTracking.xcframework in Embed Frameworks */,
 			);
@@ -110,7 +107,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E7AA1542AAED39100E5B591 /* NBAssetDataCollectLib.xcframework in Frameworks */,
-				5E7AA1512AAED38F00E5B591 /* MMKV.xcframework in Frameworks */,
 				5E7AA1562AAED39300E5B591 /* NBAssetTracking.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

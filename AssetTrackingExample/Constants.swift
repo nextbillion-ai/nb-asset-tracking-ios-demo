@@ -8,7 +8,7 @@
 import Foundation
 
 class Constants {
-    static let DEFAULT_API_KEY = "Your-API-Key"
+    static let DEFAULT_API_KEY = "YOUR-ACCESS-KEY"
     
     static let IS_NOT_FIRST_INSTALLATION_KEY = "IS_NOT_FIRST_INSTALLATION_KEY"
     
